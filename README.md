@@ -1,6 +1,19 @@
 Caffe for FlowNet2 
 ==================
 
+The original code provided by the authors cannot be built out-of-the-box. The main problems are:
+
+- missing `‘RandomGeneratorParameter’ declaration in file `$CAFFE_ROOT$/include/caffe/util/rng.hpp`
+
+- Redundant OpenCV header file in file `$CAFFE_ROOT$/src/caffe/layers/resample_layer.cu`, which is incompatible with OpenCV 3.X
+
+- The original code is incompatible with CUDNN6.0
+
+Detailed information about my modification can be found in [commit to master: should be able to build](https://github.com/xmfbit/flownet2/commit/e519743860a5769706b0912ffae9c43984c3d3aa)
+
+The original instruction offered by the authors
+===================
+
 This is the release of:
  - the CVPR 2017 version of FlowNet2.0
 
